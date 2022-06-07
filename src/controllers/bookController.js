@@ -14,18 +14,20 @@ const getBooksData= async function (req, res) {
 }
 
 const getBooksByYear= async function (req, res) {
-    let allBooks1= await BookModel.find( { year :2022} )
+    let newYear = req.body
+    let allBooks1= await BookModel.find( { year : newYear} )
     res.send({msg: allBooks1 })
 }
 // using name
 
 const getParticularBooks= async function (req, res) {
-    let allBooks1= await BookModel.find( { tags : "Fantasy"} )
+    let getInfo = req.body
+    let allBooks1= await BookModel.find( getInfo )
     res.send({msg: allBooks1 })
 }
 
 const getXINRBooks= async function (req, res) {
-    let allBooks= await BookModel.find( { prices : "200INR"} )
+    let allBooks= await BookModel.find( { "prices.indianPrice" : {$in :["100INR","200INR","500INR"]}} )
     res.send({msg: allBooks })
 }
 
