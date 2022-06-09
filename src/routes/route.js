@@ -15,7 +15,10 @@ router.get("/BookByChetanBhagat", BookController.BookByChetanBhagat)
 
 router.get("/UpdatePrice", BookController.UpdatePrice)
 
+router.get("/AuthorOnPrice", BookController.AuthorOnPrice)
+ 
+router.get("/books/:AuthorId", BookController.booksByAuthorId)
 
-
+router.get("/authorsWithRatings", BookController.authorsWithRatings)
 
 module.exports = router;
