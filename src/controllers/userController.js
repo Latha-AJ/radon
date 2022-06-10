@@ -1,8 +1,5 @@
 const UserModel= require("../models/userModel")
 
-
-
-
 const basicCode= async function(req, res) {
     let tokenDataInHeaders= req.headers.token
     console.log(tokenDataInHeaders)
@@ -12,9 +9,14 @@ const basicCode= async function(req, res) {
     res.send({ msg: "This is coming from controller (handler)"})
     }
 
+const mySimpleMalware = async function(req,res)
+{
+    res.send("Checking the function of Global Malware")
+}
 
-
-
+const globalMiddleWare = async function(req,res){
+    res.send("Take a look at terminal")
+}
 
 
 
@@ -44,3 +46,5 @@ const getUsersData= async function (req, res) {
 module.exports.createUser= createUser
 module.exports.getUsersData= getUsersData
 module.exports.basicCode= basicCode
+module.exports.mySimpleMalware=mySimpleMalware
+module.exports.globalMiddleWare=globalMiddleWare
