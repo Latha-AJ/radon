@@ -50,7 +50,6 @@ const updateIsHardcover = async function(req,res) {
    res.send({msg: data })
 }
 
-
 module.exports.createBook= createBook
 module.exports.getBooksWithAuthorDetails = getBooksWithAuthorDetails
 module.exports.updateIsHardcover=updateIsHardcover
